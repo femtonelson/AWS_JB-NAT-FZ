@@ -4,7 +4,7 @@
 
 # Step 0 : Objective
 - Setup a simple AWS VPC with 2 instances in a public subnet (reachable from internet) and an EC2 instance in a private subnet, not directly accessible to the internet, its requests will be forwarded through the NAT instance.
-- An EC2 instance in the public subnet will serve as Jumpbox, with a public IP and will serve for managing remotely all instances in the VPC
+- An EC2 instance in the public subnet called "Jumpbox", with a public IP and will serve for managing remotely all instances in the VPC
 - The other instance in the public subnet called "NAT instance", with a public IP, will perform NAT translations.
 
 # Step 1 : Create a New VPC, Internet Gateway and 2 subnets 
