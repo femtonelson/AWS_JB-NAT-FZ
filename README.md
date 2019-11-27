@@ -32,3 +32,5 @@
 - Create Route Table named "Public RT". Under Public RT -> Routes, ensure there are 2 entries : [Destination - 10.0.0.0/16   ->   Target - Local] for routing within VPC and [Destination - 0.0.0.0/0   ->   Target - IGW] for routing connections outside VPC, to the internet.
 -and under Public RT -> Subnet associations, associate to previously created Public subnet.
 - Create Route Table named "Private RT". Under Private RT -> Routes, ensure there are 2 entries : [Destination - 10.0.0.0/16   ->   Target - Local] for routing within VPC and [Destination - 0.0.0.0/0   ->   Target - NAT Instance] for routing connections to the internet, through NAT instance to be configured subsequently.
+
+# Step 5 : 
