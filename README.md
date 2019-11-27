@@ -14,11 +14,11 @@
 - Create a private subnet inside New_VPC, named "Private subnet" in the IPv4 address range : 10.0.6.0/23.
 
 # Step 2 : Create 03 new Security Groups attached to New_VPC
-- Create a new SG "Private SG". In Inbound rules set [All traffic -> All protocols -> All ports -> 10.0.0.0/16] to enable all incoming traffic from within the VPC.
+- Create a new SG "Private SG": In Inbound rules set [All traffic -> All protocols -> All ports -> 10.0.0.0/16] to enable all incoming traffic from within the VPC.
   In outbound rules set [All traffic -> All protocols -> All ports -> 0.0.0.0/0] to enable all outgoing traffic to all destinations.
-- Create a new SG "Jumpbox SG". In Inbound rules set [SSH -> TCP -> 22 -> 0.0.0.0/0], [All ICMP - IPv4 -> All -> N/A -> 0.0.0.0/0] to enable incoming SSH/Pings from internet/VPC.
+- Create a new SG "Jumpbox SG": In Inbound rules set [SSH -> TCP -> 22 -> 0.0.0.0/0], [All ICMP - IPv4 -> All -> N/A -> 0.0.0.0/0] to enable incoming SSH/Pings from internet/VPC.
   In outbound rules set [All traffic -> All protocols -> All ports -> 0.0.0.0/0] to enable all outgoing traffic to all destinations.
-- Create a new SG "NAT SG". In Inbound rules set [All traffic -> All protocols -> All ports -> 10.0.0.0/16] to enable all incoming traffic from within the VPC. Add a second inbound rule [All ICMP - IPv4 -> All -> N/A -> 0.0.0.0/0] to respond to ping requests from the internet.
+- Create a new SG "NAT SG": In Inbound rules set [All traffic -> All protocols -> All ports -> 10.0.0.0/16] to enable all incoming traffic from within the VPC. Add a second inbound rule [All ICMP - IPv4 -> All -> N/A -> 0.0.0.0/0] to respond to ping requests from the internet.
   In outbound rules set [All traffic -> All -> All -> 0.0.0.0/0] to enable all outgoing traffic to all destinations.
 
 # Step 3 : Launch 03 new instances or machines
