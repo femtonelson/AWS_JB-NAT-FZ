@@ -22,7 +22,7 @@
 - Create a new SG "NAT SG": In Inbound rules set [All traffic -> All protocols -> All ports -> 10.0.0.0/16] to enable all incoming traffic from within the VPC. Add a second inbound rule [All ICMP - IPv4 -> All -> N/A -> 0.0.0.0/0] to respond to ping requests from the internet.
   In outbound rules set [All traffic -> All -> All -> 0.0.0.0/0] to enable all outgoing traffic to all destinations.
 
-# Step 3 : Launch 03 new instances or machines
+# Step 3 : Launch 03 new instances or machines [Use the same key pair, download "My_key_pair.pem" and keep it for ssh login]
 - Launch a new EC2 instance to be named "Jumpbox" based on Linux 2 AMI -> Instance Type (t2.micro) -> Associate it to New_VPC and Public subnet.
 - Launch a new EC2 instance to be named "FZ Machine" based on Linux 2 AMI -> Instance Type (t2.micro) -> Associate it to New_VPC and Private subnet.
 - Launch a new instance to be named "NAT Instance" with suitable NAT AMI (Amazon Machine Image) from Community AMIs "amzn-ami-vpc-nat" -> Instance Type (t2.micro) -> Associate it to New_VPC and Public subnet.
@@ -40,7 +40,14 @@
 # Step 6 : Disable SRC/Dest Check on NAT Instance
 - NAT Instance -> Networking -> Change SRC/Dest. check -> Disabled. This enables the NAT instance to send and receive traffic without being the source or destination of such traffic.
 
-# Step 7 : Connect to Jumpbox through SSH and proceed with Testing
+# Step 7 : Connect to Jumpbox through SSH and proceed with Testing [Linux CLI used here]
+In local CLI, run :
+- sudo chmod 400 My_key_pair.pem : Protect this private key by making it read-only
+- sudo scp -i "My_key_pair.pem" My_key_pair.pem ec2-user@IP1:/home/ec2-user/ : Copy the private key by ssh from working dir on local machine to Jumpbox at IP1 into the folder /home/ec2-user
+- sudo ssh -i "My_key_pair.pem" ec2-user@IP1 : Connect through SSH to the Jumpbox
+
+Once connected to the Jumpbox, (private key already in the working directory) connect to FZ machine by running :
+- 
 
 
 # Step 8 : Clean-up after testing
