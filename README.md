@@ -45,10 +45,10 @@ In local CLI, run :
 - sudo chmod 400 My_key_pair.pem : Protect this private key by making it read-only
 <img src="./1.jpg">
 - sudo scp -i "My_key_pair.pem" My_key_pair.pem ec2-user@IP1:/home/ec2-user/ : Copy the private key by ssh from working dir on local 
-<img src="./2.jpg">
 machine to Jumpbox at IP1 into the folder /home/ec2-user, same private key is used here for ssh connection
+<img src="./2.jpg">
 - sudo ssh -i "My_key_pair.pem" ec2-user@IP1 : Connect by SSH to the Jumpbox -> Successful !
-
+<img src="./Connected to JB.jpg">
 Once connected to the Jumpbox, (private key already in the working directory) connect to FZ machine by running :
 - sudo ssh -i "My_key_pair.pem" ec2-user@10.0.6.145 : Connect to FZ machine  --> Successful !
 <img src="./Connected to FZ.jpg">
