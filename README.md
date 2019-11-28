@@ -44,20 +44,17 @@
 In local CLI, run :
 - sudo chmod 400 My_key_pair.pem : Protect this private key by making it read-only
 - sudo scp -i "My_key_pair.pem" My_key_pair.pem ec2-user@IP1:/home/ec2-user/ : Copy the private key by ssh from working dir on local machine to Jumpbox at IP1 into the folder /home/ec2-user, same private key is used here for ssh connection
-- sudo ssh -i "My_key_pair.pem" ec2-user@IP1 : Connect through SSH to the Jumpbox
-!(Connected to JB.jpg)
+- sudo ssh -i "My_key_pair.pem" ec2-user@IP1 : Connect by SSH to the Jumpbox -> Successful !
+<img src="./Connected to JB.jpg">
 Once connected to the Jumpbox, (private key already in the working directory) connect to FZ machine by running :
 - sudo ssh -i "My_key_pair.pem" ec2-user@10.0.6.145 : Connect to FZ machine  --> Successful !
-!(Connected to FZ.jpg)
-
+<img src="./Connected to FZ.jpg">
 - ping www.amazon.com  : Ping is successful! as traffic from FZ machine is routed through NAT instance, to the internet.
-!(Ping to Amazon.jpg)
-
+<img src="./Ping to AMZ successful.jpg">
 - traceroute www.amazon.com : Traceroute shows the first hop is the NAT instance (10.0.4.124) --> Configuration successful !
-!(First hop is NAT instance.jpg)
-
+<img src="./Traceroute.jpg">
 - sudo wget https://download2.rstudio.org/rstudio-server-rhel-1.1.383-x86_64.rpm : Download a file from internet on FZ machine to check internet connectivity --> Download successful !
-!(Download successful.jpg)
+<img src="./Test Download.jpg">
 
 # Step 8 : Clean-up after testing
 - Release all allocated IP addresses to Amazon pool if no longer in use
