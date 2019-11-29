@@ -1,5 +1,5 @@
 # AWS Tutorials
-## Tutorial to setup a Jumpbox (for management) + NAT instance + private machine in AWS VPC
+## Setup a Jumpbox (for management) + NAT instance + private machine in AWS VPC
 [Inspired from https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html]
 
 # Step 0 : Objective
