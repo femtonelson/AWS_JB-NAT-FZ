@@ -49,8 +49,7 @@ machine to Jumpbox at IP1 into the folder /home/ec2-user, same private key is us
 <img src="./2.jpg">
 - sudo ssh -i "My_key_pair.pem" ec2-user@IP1 : Connect by SSH to the Jumpbox -> Successful !
 <img src="./Connected to JB.jpg">
-Once connected to the Jumpbox, (private key already in the working directory) connect to FZ machine by running :
-- sudo ssh -i "My_key_pair.pem" ec2-user@10.0.6.145 : Connect to FZ machine  --> Successful !
+Once connected to the Jumpbox, (private key already in the working directory) connect to FZ machine by running :                          - sudo ssh -i "My_key_pair.pem" ec2-user@10.0.6.145 : Connect to FZ machine  --> Successful !
 <img src="./Connected to FZ.jpg">
 - ping www.amazon.com  : Ping is successful! as traffic from FZ machine is routed through NAT instance, to the internet.
 <img src="./Ping to AMZ successful.jpg">
