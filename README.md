@@ -40,7 +40,7 @@
 # Step 6 : Disable SRC/Dest Check on NAT Instance
 - NAT Instance -> Networking -> Change SRC/Dest. check -> Disabled. This enables the NAT instance to send and receive traffic without being the source or destination of such traffic.
 
-# Step 7 : Connect to Jumpbox through SSH and proceed with Testing [Linux CLI used here]
+# Step 7 : Connect to Jumpbox by SSH and proceed with Testing [Linux CLI used here]
 In local CLI, run :
 - sudo chmod 400 My_key_pair.pem : Protect this private key by making it read-only
 <img src="./1.jpg">
